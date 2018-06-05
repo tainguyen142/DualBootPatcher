@@ -549,3 +549,47 @@
     default_brightness: 16200
     pixel_format: ABGR_8888
     theme: portrait_hdpi
+
+- name: Samsung Galaxy Docomo J (Snapdragon)
+  id: js01lte
+  codenames:
+    - SC-02F
+    - js01lte
+    - js01ltedcm
+    - hltejs01dcm
+    - sc02f
+    - SGH-N075
+  architecture: armeabi-v7a
+
+  block_devs:
+    base_dirs:
+      - /dev/block/platform/msm_sdcc.1/by-name
+    system:
+      - /dev/block/platform/msm_sdcc.1/by-name/system
+      - /dev/block/mmcblk0p23
+    cache:
+      - /dev/block/platform/msm_sdcc.1/by-name/cache
+      - /dev/block/mmcblk0p24
+    data:
+      - /dev/block/platform/msm_sdcc.1/by-name/userdata
+      - /dev/block/mmcblk0p25
+    boot:
+      - /dev/block/platform/msm_sdcc.1/by-name/boot
+      - /dev/block/mmcblk0p14
+    recovery:
+      - /dev/block/platform/msm_sdcc.1/by-name/recovery
+      - /dev/block/mmcblk0p15
+
+  boot_ui:
+    supported: true
+    flags:
+      - TW_QCOM_RTC_FIX
+      - TW_HAS_DOWNLOAD_MODE
+    graphics_backends:
+      - fbdev
+    pixel_format: RGBX_8888
+    brightness_path: /sys/devices/mdp.0/qcom,mdss_fb_primary.178/leds/lcd-backlight/brightness
+    max_brightness: 255
+    default_brightness: 162
+    theme: portrait_hdpi
+    
